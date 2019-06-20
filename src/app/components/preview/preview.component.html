@@ -1,0 +1,70 @@
+
+
+<div mat-dialog-content>
+  <div class="preview-container">
+    <h1 mat-dialog-title>{{data.original_title}}</h1>
+    <div class="top-save">
+        <button mat-raised-button color="primary" (click)="addMovie()">{{buttonTxt}}</button>
+    </div>
+    <div class="preview-top">
+      <div class="top-info">
+        <ul>
+          <li>
+              <div class="icon">
+                  <mat-icon>trending_up</mat-icon>
+              </div>
+              <span>
+                  <span>Released:</span>
+                  <span>{{data.release_date}}</span>
+              </span>
+          </li>      
+          <li>
+            <div class="icon">
+                <mat-icon>language</mat-icon>
+            </div>
+            <span>
+                <span>Language:</span>
+                <span>{{data.original_language.toUpperCase()}}</span>
+            </span>
+          </li>
+          <li>
+              <div class="icon">
+                  <mat-icon>people</mat-icon>
+              </div>
+              <span>
+                  <span >Pouplarity:</span>
+                  <span>{{data.popularity}}</span>
+              </span>
+          </li>
+          <li>
+              <div class="icon">
+                  <mat-icon>stars</mat-icon>
+              </div>
+              <span>
+                  <span>User Votes:</span>
+                  <span>{{data.vote_average}}</span>
+              </span>
+          </li>          
+        </ul>
+      </div>  
+    </div>
+   
+      <div class="preview-middle">
+          <div class="middle-poster">
+              <img [src]="'https://image.tmdb.org/t/p/w500'+ data.backdrop_path"/>
+          </div>
+          <div class="middle-overview">
+              <p class="overview-title">Overview</p>
+              <p>
+                  {{data.overview}}
+              </p>
+              <p *ngIf="keywords" class="overview-title">About</p>
+              <p>
+                  <mat-chip-list *ngIf="keywords">
+                      <mat-chip *ngFor="let keyword of keywords.keywords;" >{{keyword.name}}</mat-chip>
+                  </mat-chip-list>
+              </p>
+          </div>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.spinner-container{
+    position: relative;
+    width:100%;
+    z-index:2;
+    padding-top:50px;
+    mat-spinner{
+         left:calc(50% - 25px);
+         transform:translateX(-50%);
+    }
+}

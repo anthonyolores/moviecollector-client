@@ -1,0 +1,5 @@
+export enum ActionTypes {
+    SET_MOVIES_POPULAR = 'SET_MOVIES_POPULAR',
+    SET_HEADER = 'SET_HEADER',
+    SET_PREVIEW = 'SET_PREVIEW'
+}

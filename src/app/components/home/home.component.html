@@ -1,0 +1,8 @@
+<div class="form-container">
+    <mat-form-field>
+      <input #searchTxt matInput placeholder="Enter Title Keywords" (keyup)="onKeyUp(searchTxt.value)">
+    </mat-form-field>
+  </div>
+
+<app-spinner *ngIf="searchedMovies === 0"></app-spinner>
+<app-movielist [movieList]="searchedMovies" [showSpinner]="false"></app-movielist>

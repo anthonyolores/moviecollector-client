@@ -1,0 +1,14 @@
+<mat-nav-list>
+  <a title="Home" mat-list-item routerLink="/" (click)="setHeader('Movie Collector')">
+      <mat-icon>home</mat-icon><span class="nav-caption">Home</span>
+  </a>
+  <a title="Popular Movies" mat-list-item routerLink="/movies/popular" (click)="setHeader('Popular')">
+    <mat-icon>trending_up</mat-icon><span class="nav-caption">Popular</span>
+  </a>
+  <a title="Top Rated Movies" mat-list-item routerLink="/movies/top_rated" (click)="setHeader('Top Rated')">
+    <mat-icon>grade</mat-icon><span class="nav-caption">Top Rated</span>
+  </a>
+  <a title="Saved Movies" mat-list-item routerLink="/movies/saved" (click)="setHeader('Saved')">
+    <mat-icon>save_alt</mat-icon><span class="nav-caption">Saved</span>
+  </a>  
+</mat-nav-list>

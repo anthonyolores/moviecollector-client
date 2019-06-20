@@ -1,0 +1,13 @@
+<app-spinner *ngIf="movies == null && showSpinner"></app-spinner>
+<div class="movie-container" *ngIf="movies">
+  <div class="movie-item" 
+  *ngFor="let movie of movies.results; let i = index" 
+  (click)="previewMovie(movie)" 
+  (mouseover)="mouseOverMovie(i)" 
+  (mouseout)="mouseOutMovie(i)">
+    <img [alt]="movie.title"  [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"/>
+  </div>
+  <p mat-line *ngIf="movies.results.length < 1">
+      No Movies Found
+  </p>
+</div>
